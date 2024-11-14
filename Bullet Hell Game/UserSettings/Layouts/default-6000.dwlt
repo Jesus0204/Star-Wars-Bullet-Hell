@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1290
     height: 861
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 89
+  controlID: 85
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 65
+  controlID: 29
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -1008,13 +1008,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.004274333, y: 0.98103803, z: -0.19255163, w: -0.02178165}
     speed: 2
-    m_Value: {x: -0.10625757, y: 0.86003226, z: -0.199838, w: -0.45729497}
+    m_Value: {x: -0.004274333, y: 0.981038, z: -0.19255161, w: -0.021781648}
   m_Size:
-    m_Target: 10
+    m_Target: 443.79172
     speed: 2
-    m_Value: 9.552036
+    m_Value: 443.79172
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1091,8 +1091,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets
+    m_Folders: []
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1104,14 +1103,14 @@ MonoBehaviour:
   m_LastFolders: []
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/jesusscedillo/Documents/Coding Tec/Semestre 5/Multiagentes
-    Unity/Estructuracion Proyectos Unity/Proyectos en Unity
+    Unity/Star-Wars-Bullet-Hell/Bullet Hell Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 90bd0000
     m_LastClickedID: 48528
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000e0a300002ca400002ea4000030a4000032a4000034a4000036a4000038a40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1140,7 +1139,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000e0a300002ca400002ea4000030a4000032a4000034a4000036a4000038a40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1239,7 +1238,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3668fffffcd30000
+      m_ExpandedIDs: 08fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
