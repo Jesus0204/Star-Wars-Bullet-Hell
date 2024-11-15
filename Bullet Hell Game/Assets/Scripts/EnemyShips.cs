@@ -28,6 +28,8 @@ public class EnemyShips : MonoBehaviour
     public float movimientoRadio = 0.0f; // Radio del movimiento circular
     public float movimientoVelocidad = 0.0f; // Velocidad de rotación
 
+    private bool gameFinished = false;
+
     void Start()
     {
         StartCoroutine(SpawnTieFighters());
@@ -49,6 +51,19 @@ public class EnemyShips : MonoBehaviour
 
             // Actualizar la posición del objeto
             EstrellaDeLaMuerte.position = movimientoCentro + offset;
+        }
+
+        if (gameFinished && tieFighterCount == 0)
+        {
+            GameObject uiObject = GameObject.FindGameObjectWithTag("GameStateText");
+            if (uiObject != null)
+            {
+                TextMeshProUGUI gameStateText = uiObject.GetComponent<TextMeshProUGUI>();
+                if (gameStateText != null)
+                {
+                    gameStateText.text = "You Win!";
+                }
+            }
         }
     }
 
@@ -80,6 +95,9 @@ public class EnemyShips : MonoBehaviour
             SpawnFlowerBatch();
             yield return new WaitForSeconds(tiempoEntreDisparos);
         }
+
+        gameFinished = true;
+        
     }
 
     void SpawnBatch()
