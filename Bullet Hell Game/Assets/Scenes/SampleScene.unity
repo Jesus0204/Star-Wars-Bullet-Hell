@@ -582,6 +582,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 899658824001179215, guid: 04253968ab5b64e6399175ddc54565e8, type: 3}
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
+      propertyPath: movimientoRadio
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: numeroDeBatches
       value: 25
       objectReference: {fileID: 0}
@@ -600,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: rotacionIncremento
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
+      propertyPath: movimientoVelocidad
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: tiempoEntreDisparos

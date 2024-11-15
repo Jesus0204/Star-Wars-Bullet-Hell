@@ -21,9 +21,35 @@ public class EnemyShips : MonoBehaviour
     // Contador de TieFighters
     private int tieFighterCount = 0;
 
+    // Indica si la Estrella de la Muerte está en movimiento
+    private bool deathStarisMoving = false;
+    private Vector3 movimientoCentro; // Centro del movimiento circular
+    private float movimientoAngulo = 0.0f;
+    public float movimientoRadio = 0.0f; // Radio del movimiento circular
+    public float movimientoVelocidad = 0.0f; // Velocidad de rotación
+
     void Start()
     {
         StartCoroutine(SpawnTieFighters());
+    }
+
+    void Update()
+    {
+        if(deathStarisMoving)
+        {
+            movimientoAngulo += movimientoVelocidad * Time.deltaTime;
+            if(movimientoAngulo >= 360f)
+                movimientoAngulo -= 360f;
+
+            // Convertir el ángulo a radianes
+            float rad = movimientoAngulo * Mathf.Deg2Rad;
+
+            // Calcular el offset basado en el ángulo y el radio
+            Vector3 offset = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)) * movimientoRadio;
+
+            // Actualizar la posición del objeto
+            EstrellaDeLaMuerte.position = movimientoCentro + offset;
+        }
     }
 
     IEnumerator SpawnTieFighters()
@@ -36,11 +62,16 @@ public class EnemyShips : MonoBehaviour
 
         yield return new WaitForSeconds(10.0f);
 
-        for (int i = 0; i < numeroDeBatches; i++)
+        movimientoCentro = EstrellaDeLaMuerte.position;
+        deathStarisMoving = true;
+
+        for (int i = 0; i < numeroDeBatches / 1.5; i++)
         {
             SpawnCircleBatch();
-            yield return new WaitForSeconds(tiempoEntreDisparos  * 4);
+            yield return new WaitForSeconds(tiempoEntreDisparos * 3);
         }
+
+        deathStarisMoving = false;
     }
 
     void SpawnBatch()
