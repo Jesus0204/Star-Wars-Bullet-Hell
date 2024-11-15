@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class EnemyShips : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class EnemyShips : MonoBehaviour
     public float radioSpawn = 22.0f;  
     public float rotacionIncremento = 0.0f;
     private float currentRotation = 0.0f; 
+
+    public TextMeshProUGUI numTieFightersText;
+
+    // Contador de TieFighters
+    private int tieFighterCount = 0;
 
     void Start()
     {
@@ -39,13 +45,39 @@ public class EnemyShips : MonoBehaviour
             Vector3 direccion = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)).normalized;
             Vector3 posicionSpawn = EstrellaDeLaMuerte.position + direccion * radioSpawn;
 
-            GameObject bala = Instantiate(TieFighter, posicionSpawn, Quaternion.identity);
+            GameObject tieFighter = Instantiate(TieFighter, posicionSpawn, Quaternion.identity);
 
-            Rigidbody rb = bala.GetComponent<Rigidbody>();
+            Rigidbody rb = tieFighter.GetComponent<Rigidbody>();
             rb.linearVelocity = direccion * velocidadTieFighter;
+
+            IncrementTieFighterCount(tieFighter);
         }
 
         currentRotation += rotacionIncremento;
         currentRotation %= 360f; 
+    }
+
+    void IncrementTieFighterCount(GameObject tieFighter)
+    {
+        tieFighterCount++;
+        UpdateText();
+
+        // Asignar el EnemyShips al script del TieFighter
+        TieFighter tfScript = tieFighter.GetComponent<TieFighter>();
+        if(tfScript != null)
+        {
+            tfScript.SetEnemyShips(this);
+        }
+    }
+
+    public void TieFighterDestroyed()
+    {
+        tieFighterCount--;
+        UpdateText();
+    }
+
+    void UpdateText()
+    {
+        numTieFightersText.text = $"Número de Tie Fighters actuales: {tieFighterCount} ";
     }
 }

@@ -147,15 +147,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1563af1f18f054664a30a3fa7b05da94, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1563af1f18f054664a30a3fa7b05da94, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1563af1f18f054664a30a3fa7b05da94, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1563af1f18f054664a30a3fa7b05da94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -253,6 +253,7 @@ MonoBehaviour:
   laserBullet: {fileID: 7247559373621351500, guid: 79c54bc37eadb4187870fbeb637036c9, type: 3}
   puntoDisparo: {fileID: 1943095528906426046}
   velocidadBala: 50
+  gameOver: {fileID: 4223936472469151357, guid: f56cba9cb916e499d9358f85c6cb5287, type: 3}
 --- !u!65 &-5552772136301563993
 BoxCollider:
   m_ObjectHideFlags: 0

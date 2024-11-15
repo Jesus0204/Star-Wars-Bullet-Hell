@@ -155,3 +155,8 @@ MonoBehaviour:
   TieFighter: {fileID: 0}
   velocidadTieFighter: 0
   numChorros: 0
+  tiempoEntreDisparos: 0
+  numeroDeBatches: 0
+  radioSpawn: 22
+  rotacionIncremento: 0
+  numTieFightersText: {fileID: 8222153478762030765, guid: acc02f468b8e24d62beb4bd3db03b6c8, type: 3}
