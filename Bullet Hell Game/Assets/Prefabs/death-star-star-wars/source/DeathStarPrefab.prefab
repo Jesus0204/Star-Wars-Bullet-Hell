@@ -163,3 +163,4 @@ MonoBehaviour:
   numTieFightersText: {fileID: 8222153478762030765, guid: acc02f468b8e24d62beb4bd3db03b6c8, type: 3}
   movimientoRadio: 10
   movimientoVelocidad: 50
+  numPetals: 5

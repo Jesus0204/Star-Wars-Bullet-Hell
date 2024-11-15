@@ -566,12 +566,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
+      propertyPath: numPetals
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: TieFighter
       value: 
       objectReference: {fileID: 616754684626610478, guid: e5784b3808ea94934862b091d5343f1c, type: 3}
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: numChorros
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3257372926552019676, guid: 01578b63240044a788869d5913dc760a, type: 3}
       propertyPath: radioSpawn
@@ -1038,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 4223936472469151357, guid: f56cba9cb916e499d9358f85c6cb5287, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674278819519848362, guid: f56cba9cb916e499d9358f85c6cb5287, type: 3}
+      propertyPath: m_Name
+      value: GameStateText
       objectReference: {fileID: 0}
     - target: {fileID: 7674278819519848362, guid: f56cba9cb916e499d9358f85c6cb5287, type: 3}
       propertyPath: m_IsActive

@@ -57,10 +57,10 @@ public class EnemyShips : MonoBehaviour
         for(int j = 0; j < numeroDeBatches; j++)
         {
             SpawnBatch();
-            yield return new WaitForSeconds(tiempoEntreDisparos); 
+            yield return new WaitForSeconds(tiempoEntreDisparos);
         }
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(6.0f);
 
         movimientoCentro = EstrellaDeLaMuerte.position;
         deathStarisMoving = true;
@@ -72,6 +72,14 @@ public class EnemyShips : MonoBehaviour
         }
 
         deathStarisMoving = false;
+
+        yield return new WaitForSeconds(6.0f);
+
+        for (int i = 0; i < numeroDeBatches; i++)
+        {
+            SpawnFlowerBatch();
+            yield return new WaitForSeconds(tiempoEntreDisparos);
+        }
     }
 
     void SpawnBatch()
@@ -114,6 +122,39 @@ public class EnemyShips : MonoBehaviour
 
             IncrementTieFighterCount(tieFighter);
         }
+    }
+
+    void SpawnFlowerBatch() {
+        float anguloSeparacion = 360f / numChorros;
+
+        for(int i = 0; i < numChorros; i++) {
+            float direccionAngulo;
+
+            if (i % 2 == 0)
+            {
+                direccionAngulo = 1f; 
+            }
+            else
+            {
+                direccionAngulo = -1f; 
+            }
+            float angulo = i * anguloSeparacion + currentRotation * direccionAngulo;
+            float rad = angulo * Mathf.Deg2Rad;
+
+            Vector3 direccion = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)).normalized;
+            Vector3 posicionSpawn = EstrellaDeLaMuerte.position + direccion * radioSpawn;
+
+            GameObject tieFighter = Instantiate(TieFighter, posicionSpawn, Quaternion.identity);
+
+            Rigidbody rb = tieFighter.GetComponent<Rigidbody>();
+            rb.linearVelocity = direccion * velocidadTieFighter;
+
+            IncrementTieFighterCount(tieFighter);
+        }
+
+        currentRotation += rotacionIncremento;
+        currentRotation %= 360f; 
+        
     }
 
     void IncrementTieFighterCount(GameObject tieFighter)
