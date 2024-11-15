@@ -32,6 +32,10 @@ public class MoveShip : MonoBehaviour
     public Camera mainCamera;
     public Camera hoodCamera;
 
+    public GameObject laserBullet; // Prefab de la bala
+    public Transform puntoDisparo; // Punto desde donde se disparan las balas
+    public float velocidadBala = 0.0f; // Velocidad de la bala
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,5 +82,21 @@ public class MoveShip : MonoBehaviour
             hoodCamera.enabled = !hoodCamera.enabled;
         }
 
+        if (Input.GetKeyDown(shootKey))
+        {
+            Disparar();
+        }
+
+    }
+
+    void Disparar()
+    {
+        Vector3 desplazamiento = puntoDisparo.forward * 7f; 
+        Vector3 posicionBala = puntoDisparo.position + desplazamiento;
+
+        GameObject bala = Instantiate(laserBullet, posicionBala, puntoDisparo.rotation);
+
+        Rigidbody rb = bala.GetComponent<Rigidbody>();
+        rb.linearVelocity = puntoDisparo.forward * velocidadBala;
     }
 }
