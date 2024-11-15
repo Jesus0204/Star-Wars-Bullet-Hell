@@ -178,6 +178,6 @@ public class EnemyShips : MonoBehaviour
 
     void UpdateText()
     {
-        numTieFightersText.text = $"Número de Tie Fighters actuales: {tieFighterCount} ";
+        numTieFightersText.text = $"Número de Tie Fighters actuales: {tieFighterCount}";
     }
 }

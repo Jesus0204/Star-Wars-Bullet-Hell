@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class TieFighter : MonoBehaviour
 {
@@ -44,13 +45,10 @@ public class TieFighter : MonoBehaviour
 
         if (collision.gameObject.CompareTag(JediShipTag))
         {
-
-            // Pausa el juego
+            UpdateText();
+            Destroy(collision.gameObject);
             Time.timeScale = 0f;
         }
-
-        // Opcional: Destruye el objeto con el que colisiona
-        // Destroy(collision.gameObject);
     }
 
     void OnDestroy()
@@ -58,6 +56,19 @@ public class TieFighter : MonoBehaviour
         if(enemyShips != null)
         {
             enemyShips.TieFighterDestroyed();
+        }
+    }
+
+    void UpdateText()
+    {
+        GameObject uiObject = GameObject.FindGameObjectWithTag("GameStateText");
+        if (uiObject != null)
+        {
+            TextMeshProUGUI gameStateText = uiObject.GetComponent<TextMeshProUGUI>();
+            if (gameStateText != null)
+            {
+                gameStateText.text = "Game Over";
+            }
         }
     }
 }
