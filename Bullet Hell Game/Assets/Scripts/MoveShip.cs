@@ -39,7 +39,7 @@ public class MoveShip : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentSpeed = normalSpeed;
+        currentSpeed = boostedSpeed;
     }
 
     // Update is called once per frame
@@ -54,16 +54,13 @@ public class MoveShip : MonoBehaviour
         // Obtener el input de rotación del jugador, usando el nombre del InputManager
         RotateInput = Input.GetAxis("Rotate");
 
-        if (Input.GetKeyDown(speedKey))
+        if (Input.GetKey(speedKey))
         {
-            if (currentSpeed == normalSpeed)
-            {
-                currentSpeed = boostedSpeed;
-            }
-            else
-            {
-                currentSpeed = normalSpeed;
-            }
+            currentSpeed = normalSpeed;
+        }
+        else
+        {
+            currentSpeed = boostedSpeed;
         }
 
         // Mover vehículo hacia adelante
