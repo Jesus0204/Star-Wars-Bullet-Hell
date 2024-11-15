@@ -9,6 +9,7 @@ public class EnemyShips : MonoBehaviour
     public float velocidadTieFighter = 0.0f;
 
     public int numChorros = 0;
+    public int numChorrosCirculo = 0;
     public float tiempoEntreDisparos = 0.0f;
     public float numeroDeBatches = 0.0f;
     public float radioSpawn = 22.0f;  
@@ -31,6 +32,14 @@ public class EnemyShips : MonoBehaviour
         {
             SpawnBatch();
             yield return new WaitForSeconds(tiempoEntreDisparos); 
+        }
+
+        yield return new WaitForSeconds(10.0f);
+
+        for (int i = 0; i < numeroDeBatches; i++)
+        {
+            SpawnCircleBatch();
+            yield return new WaitForSeconds(tiempoEntreDisparos  * 4);
         }
     }
 
@@ -55,6 +64,25 @@ public class EnemyShips : MonoBehaviour
 
         currentRotation += rotacionIncremento;
         currentRotation %= 360f; 
+    }
+
+    void SpawnCircleBatch() {
+        float anguloSeparacion = 360f / numChorrosCirculo;
+
+        for(int i = 0; i < numChorrosCirculo; i++) {
+            float angulo = i * anguloSeparacion;
+            float rad = angulo * Mathf.Deg2Rad;
+
+            Vector3 direccion = new Vector3(Mathf.Cos(rad), 0, Mathf.Sin(rad)).normalized;
+            Vector3 posicionSpawn = EstrellaDeLaMuerte.position + direccion * radioSpawn;
+
+            GameObject tieFighter = Instantiate(TieFighter, posicionSpawn, Quaternion.identity);
+
+            Rigidbody rb = tieFighter.GetComponent<Rigidbody>();
+            rb.linearVelocity = direccion * velocidadTieFighter;
+
+            IncrementTieFighterCount(tieFighter);
+        }
     }
 
     void IncrementTieFighterCount(GameObject tieFighter)
