@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: TargetTag
+  laserTag: LaserBullet
+  lifeLeft: 3
 --- !u!65 &1625141625167401081
 BoxCollider:
   m_ObjectHideFlags: 0

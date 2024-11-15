@@ -201,6 +201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jedi Starfighter Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1563af1f18f054664a30a3fa7b05da94, type: 3}
+      propertyPath: m_TagString
+      value: JediShip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -246,7 +250,7 @@ MonoBehaviour:
   switchKey: 303
   mainCamera: {fileID: 0}
   hoodCamera: {fileID: 3097377874994620880}
-  laserBullet: {fileID: 3457867331102143000, guid: 24c4f269e78a241889c016cd940e1351, type: 3}
+  laserBullet: {fileID: 7247559373621351500, guid: 79c54bc37eadb4187870fbeb637036c9, type: 3}
   puntoDisparo: {fileID: 1943095528906426046}
   velocidadBala: 50
 --- !u!65 &-5552772136301563993
