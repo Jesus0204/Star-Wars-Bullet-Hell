@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TieFighter : MonoBehaviour
 {
+    public string objectToDestroy;
+
     void OnBecameInvisible()
     {
         Destroy(gameObject); 
@@ -9,10 +11,13 @@ public class TieFighter : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // Destruye la bala cuando colisiona con un objeto
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag(objectToDestroy))
+        {
+            // Destruye el TieFighter
+            Destroy(gameObject);
+        }
 
-        // Destruye el objeto con el que colisiona
+        // Opcional: Destruye el objeto con el que colisiona
         // Destroy(collision.gameObject);
     }
 }

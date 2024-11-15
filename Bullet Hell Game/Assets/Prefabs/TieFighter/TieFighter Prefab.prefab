@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b854102a1f043a0bd94b547b11add1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToDestroy: TargetTag
 --- !u!65 &1625141625167401081
 BoxCollider:
   m_ObjectHideFlags: 0
