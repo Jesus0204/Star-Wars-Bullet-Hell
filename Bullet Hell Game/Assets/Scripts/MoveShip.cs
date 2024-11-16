@@ -36,10 +36,18 @@ public class MoveShip : MonoBehaviour
     public Transform puntoDisparo; // Punto desde donde se disparan las balas
     public float velocidadBala = 0.0f; // Velocidad de la bala
 
+    public AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentSpeed = boostedSpeed;
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource no asignado. Asignando el componente automáticamente.");
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -95,5 +103,15 @@ public class MoveShip : MonoBehaviour
 
         Rigidbody rb = bala.GetComponent<Rigidbody>();
         rb.linearVelocity = puntoDisparo.forward * velocidadBala;
+
+        Reproducir();
+    }
+
+    void Reproducir()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }
