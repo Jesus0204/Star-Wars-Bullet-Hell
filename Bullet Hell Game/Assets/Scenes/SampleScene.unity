@@ -315,7 +315,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 1c23f14668690482b8a83458a771b418, type: 3}
   m_Resource: {fileID: 8300000, guid: 1c23f14668690482b8a83458a771b418, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1152,6 +1152,14 @@ PrefabInstance:
     - target: {fileID: 4492273836541082078, guid: 9e82325c44ef043189b41ccdad0767b4, type: 3}
       propertyPath: gameOverText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273521292521706132, guid: 9e82325c44ef043189b41ccdad0767b4, type: 3}
+      propertyPath: Priority
+      value: 152
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273521292521706132, guid: 9e82325c44ef043189b41ccdad0767b4, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5273521292521706132, guid: 9e82325c44ef043189b41ccdad0767b4, type: 3}
       propertyPath: m_PlayOnAwake

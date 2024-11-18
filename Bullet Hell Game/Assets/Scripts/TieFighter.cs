@@ -46,7 +46,6 @@ public class TieFighter : MonoBehaviour
         if (collision.gameObject.CompareTag(JediShipTag))
         {
             UpdateText();
-            Destroy(collision.gameObject);
             Time.timeScale = 0f;
         }
     }
